@@ -9,7 +9,7 @@ Description
 -----------------
 **edge_publisher**
 Reads each data point from dataset.csv after every 60-sec delay and publish to the cloud(live data)
-If the server returns failure or server is stopped the data point is buffered locally as dequeue. 
+If the server returns failure or server is stopped the data point is buffered locally as dequeue.
 Publish all the buffered data after every 5 seconds.
 Prints count of packets sent and buffered.
 
