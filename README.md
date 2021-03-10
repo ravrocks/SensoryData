@@ -20,6 +20,6 @@ Description
 
 Technologies Used
 -----------------
--MQTT Broker used - Mosquitto Broker, which is running on localhost and port 1833.
--Python v3.8.0
--Eclipse IDE
+ - MQTT Broker used - Mosquitto Broker, which is running on localhost and port 1833.
+ - Python v3.8.0
+ - Eclipse IDE
