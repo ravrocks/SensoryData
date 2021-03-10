@@ -36,9 +36,15 @@ def retry_Send():
                 print("Big probs!")
                 qstruct=qstruct2
                 break;
+            
+def print_status():
+    print("Packets sent- ",counter_packets)
+    print("Buffered Packets- ",len(qstruct))
+    
 ##########################################################################
 if __name__ == "__main__":
     qstruct = deque()
+    counter_packets=0
     client = mqtt.Client("CLient1")
     client.on_connect = on_connect
     client.on_message=on_message
@@ -61,6 +67,9 @@ if __name__ == "__main__":
                 resultxx=publish_value(client, "Sensory Data" ,print_me.format(sensor_type, valz,timestamp))
                 if resultxx[0] != 0:
                     qstruct.append(print_me.format(sensor_type, valz,timestamp))
+                else:
+                    counter_packets+=1
+                print_status()
                 time.sleep(60)
  
     client.disconnect()
